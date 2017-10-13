@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/cardBackground"
+    android:elevation="8dp"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:translationZ="4dp"
+   >
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:paddingBottom="8dp"
+        android:paddingEnd="0dp"
+        android:paddingStart="8dp"
+        android:paddingTop="8dp">
+
+        <ImageView
+            android:id="@+id/videoThumbnail"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@mipmap/ic_launcher"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:id="@+id/videoInfo"
+            android:layout_alignBaseline="@+id/videoThumbnail"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/videoThumbnail"
+            android:layout_width="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TextViewVideoInfoStyle"
+                android:id="@+id/txtRecordTime"
+                android:text="Record Time"
+                />
+
+            <TextView
+                style="@style/TextViewVideoInfoStyle"
+                android:id="@+id/txtVideoDuration"
+                android:text="Duration" />
+
+            <TextView
+
+                style="@style/TextViewVideoInfoStyle"
+                android:id="@+id/txtVideoResolution"
+                android:text="Resolution" />
+
+            <TextView
+                style="@style/TextViewVideoInfoStyle"
+                android:id="@+id/txtVideoSize"
+                android:text="Video Szie"
+                ></TextView>
+        </LinearLayout>
+
+        <ImageButton
+           android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:id="@+id/btnPopupMenu"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="20dp"
+            android:padding="4dp"
+            android:src="@drawable/ic_more_vert_black_24dp"
+            android:tint="@color/colorPrimary" />
+    </RelativeLayout>
+</FrameLayout>
