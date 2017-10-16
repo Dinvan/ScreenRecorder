@@ -11,6 +11,8 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private static final int REQUEST_CODE = 1000;
     Button btn_action;
+    RecyclerView videos_list;
     private MediaProjectionManager mProjectionManager;
     private static final int REQUEST_PERMISSION_KEY = 1;
 
@@ -29,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        videos_list=(RecyclerView)findViewById(R.id.videos_list);
+
         String[] PERMISSIONS = {
                 Manifest.permission.WRITE_EXTERNAL_STORAGE,
                 Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -49,6 +54,10 @@ public class MainActivity extends AppCompatActivity {
                         REQUEST_CODE);
             }
         });
+
+        videos_list.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        VideoItemLayoutAdapter videoItemLayoutAdapter=new VideoItemLayoutAdapter(RecordedVideoModel.listAll(RecordedVideoModel.class),getApplicationContext());
+        videos_list.setAdapter(videoItemLayoutAdapter);
     }
 
 

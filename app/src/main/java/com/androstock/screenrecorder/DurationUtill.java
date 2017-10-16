@@ -32,7 +32,7 @@ public class DurationUtill {
         long j2 = j / 1000;
         long j3 = (j2 / 60) / 60;
         j2 = (j2 - (60 * ((j2 - (j3 * 3600)) / 60))) - (j3 * 3600);
-        return String.format(Locale.getDefault(), "%02d:%02d:%02d", new Object[]{Long.valueOf(j3), Long.valueOf(r4), Long.valueOf(j2)});
+        return String.format(Locale.getDefault(), "%02d:%02d:%02d", new Object[]{Long.valueOf(j3), Long.valueOf(j), Long.valueOf(j2)});
     }
 
     public static String c(long j) {
