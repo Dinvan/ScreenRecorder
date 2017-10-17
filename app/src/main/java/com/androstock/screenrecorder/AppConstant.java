@@ -38,6 +38,23 @@ public class AppConstant {
         return image;
     }
 
+    public static File createVideoFile(String prefix,Context context) throws IOException {
+        // Create an image file name
+
+        String imageFileName = prefix+ System.currentTimeMillis() + "_";
+        File storageDir = context.getExternalFilesDir(IMAGE_FOLDER);
+        File image = File.createTempFile(
+                imageFileName,  /* prefix */
+                ".mp4",         /* suffix */
+                storageDir      /* directory */
+        );
+
+        // Save a file: path for use with ACTION_VIEW intents
+        // mCurrentPhotoPath = image.getAbsolutePath();
+        Log.e("newImage", image.getAbsolutePath());
+        return image;
+    }
+
     public static String getFormattedDateTime(long time, String pattern) {
         SimpleDateFormat sdfDate = new SimpleDateFormat(pattern, Locale.ENGLISH);
         Date date = new Date();

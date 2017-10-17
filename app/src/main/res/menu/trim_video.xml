@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res/android">
+    <item
+        app:id="@+id/action_add_video"
+        app:icon="@drawable/ic_add_white_24dp"
+        app:orderInCategory="99"
+        android:showAsAction="ifRoom"
+        app:title="Add Video" />
+    <item
+        app:id="@+id/action_trim_video"
+        app:icon="@drawable/ic_content_cut_white_24dp"
+        app:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        app:title="Trim Video" />
+</menu>

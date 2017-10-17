@@ -24,6 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.androstock.screenrecorder.fileprovider"
@@ -33,9 +34,10 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
+
         <service
             android:name=".ScreenRecordService"
-            android:exported="false"></service>
+            android:exported="false" />
 
         <meta-data
             android:name="DATABASE"
@@ -49,6 +51,11 @@
         <meta-data
             android:name="DOMAIN_PACKAGE_NAME"
             android:value="com.androstock.screenrecorder" />
+
+        <activity android:name=".TrimVideoActivity" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"></activity>
     </application>
 
 </manifest>

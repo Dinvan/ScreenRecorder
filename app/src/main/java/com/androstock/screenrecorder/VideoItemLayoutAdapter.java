@@ -80,10 +80,14 @@ public class VideoItemLayoutAdapter extends RecyclerView.Adapter<VideoItemLayout
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Uri uri = FileProvider.getUriForFile(context, AppConstant.FILE_PROVIDER, new File(recordedVideoModel.getVideoLinkSdCard()));
+               /* Uri uri = FileProvider.getUriForFile(context, AppConstant.FILE_PROVIDER, new File(recordedVideoModel.getVideoLinkSdCard()));
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.setDataAndType(uri, "video/mp4");
+                context.startActivity(intent);*/
+               Intent intent=new Intent(context,TrimVideoActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("selected_video",recordedVideoModel.getId());
                 context.startActivity(intent);
             }
         });
