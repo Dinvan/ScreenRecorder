@@ -1,6 +1,7 @@
 package com.androstock.screenrecorder;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.media.MediaPlayer;
@@ -55,6 +56,12 @@ public class TrimVideoActivity extends AppCompatActivity {
 
         selectedVideoId = getIntent().getExtras().getLong("selected_video");
         initializeViews();
+    }
+
+    public static  void startActivity(Context context){
+        Intent intent=new Intent(context,SettingsActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
     }
 
     public void initializeViews() {
@@ -300,5 +307,12 @@ public class TrimVideoActivity extends AppCompatActivity {
 
         }
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public static  void startActivity(Context context,long selectedVideoId){
+        Intent intent=new Intent(context,TrimVideoActivity.class);
+        intent.putExtra("selected_video",selectedVideoId);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
     }
 }

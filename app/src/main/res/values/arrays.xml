@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <array name="file_name_format_array">
+    <string-array name="file_name_format_array">
         <item>yy_MM_dd_HH_mm_ss</item>
         <item>yyyy_MM_dd_HH_mm_ss</item>
         <item>yy_dd_MM_HH_mm_ss</item>
@@ -26,8 +26,10 @@
         <item>dd-MM-yyyy_HH-mm-ss</item>
         <item>MM-dd-yy_HH-mm-ss</item>
         <item>MM-dd-yyyy_HH-mm-ss</item>
-    </array>
-    <array name="languages_array">
+    </string-array>
+
+
+    <string-array name="languages_array">
         <item>English</item>
         <item>French</item>
         <item>Turkish</item>
@@ -50,15 +52,15 @@
         <item>German</item>
         <item>Uyghur</item>
         <item>Hindi (India)</item>
-    </array>
+    </string-array>
 
-    <array name="quality_sound_array">
+    <string-array name="quality_sound_array">
         <item>64 Kbps</item>
         <item>128 Kbps</item>
         <item>256 Kbps</item>
         <item>320 Kbps</item>
-    </array>
-    <array name="video_bit_rate_array">
+    </string-array>
+    <string-array name="video_bit_rate_array">
         <item>15 Mbps</item>
         <item>12 Mbps</item>
         <item>10 Mbps</item>
@@ -66,24 +68,74 @@
         <item>6 Mbps</item>
         <item>4 Mbps</item>
         <item>2 Mbps</item>
-    </array>
-    <array name="video_encoder_array">
+    </string-array>
+
+    <string-array name="video_bit_rate_array_value">
+        <item>15</item>
+        <item>12</item>
+        <item>10</item>
+        <item>8</item>
+        <item>6</item>
+        <item>4</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="video_encoder_array">
         <item>H264</item>
         <item>MPEG_4_SP</item>
-    </array>
-    <array name="video_encoder_array_7">
+    </string-array>
+    <string-array name="video_encoder_array_value">
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="video_encoder_array_7">
         <item>H264</item>
         <item>MPEG_4_SP</item>
         <item>H265 (HEVC)</item>
-    </array>
+    </string-array>
     <string-array name="video_frame_rate_array">
+        <item>16 fps</item>
         <item>24 fps</item>
         <item>25 fps</item>
         <item>30 fps</item>
         <item>48 fps</item>
         <item>60 fps</item>
     </string-array>
+
+    <string-array name="video_frame_rate_array_value">
+        <item>16</item>
+        <item>24</item>
+        <item>25</item>
+        <item>30</item>
+        <item>48</item>
+        <item>60</item>
+    </string-array>
     <string-array name="time_delay">
+        <item>0 Second</item>
+        <item>1 Second</item>
+        <item>2 Second</item>
+        <item>3 Second</item>
+        <item>4 Second</item>
+        <item>5 Second</item>
+        <item>6 Second</item>
+        <item>7 Second</item>
+        <item>8 Second</item>
+        <item>9 Second</item>
+        <item>10 Second</item>
+        <item>11 Second</item>
+        <item>12 Second</item>
+        <item>13 Second</item>
+        <item>14 Second</item>
+        <item>15 Second</item>
+        <item>16 Second</item>
+        <item>17 Second</item>
+        <item>18 Second</item>
+        <item>19 Second</item>
+        <item>20 Second</item>
+
+    </string-array>
+
+    <string-array name="time_delay_value">
         <item>0</item>
         <item>1</item>
         <item>2</item>
@@ -116,5 +168,11 @@
         <item>426x240</item>
     </string-array>
 
-
+    <string-array name="video_size_array_value">
+        <item>2073600</item>
+        <item>921600</item>
+        <item>409920</item>
+        <item>230400</item>
+        <item>102240</item>
+    </string-array>
 </resources>

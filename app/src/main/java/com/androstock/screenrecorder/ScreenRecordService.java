@@ -7,6 +7,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.hardware.display.DisplayManager;
 import android.hardware.display.VirtualDisplay;
 import android.media.MediaRecorder;
@@ -17,6 +18,7 @@ import android.net.Uri;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.IBinder;
+import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.FileProvider;
 import android.util.DisplayMetrics;
@@ -132,6 +134,9 @@ public class ScreenRecordService extends Service {
     File destination;
     private void initRecorder() {
         try {
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+
+
             mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
             mMediaRecorder.setVideoSource(MediaRecorder.VideoSource.SURFACE);
             mMediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4); //THREE_GPP
@@ -140,10 +145,12 @@ public class ScreenRecordService extends Service {
 
             mMediaRecorder.setOutputFile(destination.getAbsolutePath());
             mMediaRecorder.setVideoSize(DISPLAY_WIDTH, DISPLAY_HEIGHT);
-            mMediaRecorder.setVideoEncoder(MediaRecorder.VideoEncoder.H264);
+            int videoEncoder=Integer.parseInt(sharedPreferences.getString("video_encoder",MediaRecorder.VideoEncoder.H264+""));
+            mMediaRecorder.setVideoEncoder(videoEncoder);
             mMediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
             mMediaRecorder.setVideoEncodingBitRate(512 * 1000);
-            mMediaRecorder.setVideoFrameRate(16); // 30
+            int frameRate=Integer.parseInt(sharedPreferences.getString("frame_rate",16+""));
+            mMediaRecorder.setVideoFrameRate(frameRate); // 30
             mMediaRecorder.setVideoEncodingBitRate(3000000);
 
             Display display = windowManager.getDefaultDisplay();

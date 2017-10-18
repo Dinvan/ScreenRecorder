@@ -1,29 +1,21 @@
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory android:title="Video Control">
         <ListPreference
-            android:defaultValue="0"
+            android:defaultValue="3"
             android:entries="@array/time_delay"
-            android:entryValues="@array/time_delay"
+            android:entryValues="@array/time_delay_value"
             android:key="time_delay"
             android:negativeButtonText="@null"
             android:positiveButtonText="@null"
-            android:summary="Current time : 3s"
+            android:summary="%s"
             android:title="Time delay before recording" />
 
-        <ListPreference
-            android:defaultValue="0"
-            android:entries="@array/time_delay"
-            android:entryValues="@array/time_delay"
-            android:key="stop_option"
-            android:negativeButtonText="@null"
-            android:positiveButtonText="@null"
-            android:summary="Choose how to stop recording"
-            android:title="Stop Options" />
     </PreferenceCategory>
     <PreferenceCategory android:title="Video Settings">
         <ListPreference
-            android:defaultValue="0"
+            android:defaultValue="yy_MM_dd_HH_mm_ss"
             android:entries="@array/file_name_format_array"
             android:entryValues="@array/file_name_format_array"
             android:key="file_name_formate"
@@ -32,37 +24,37 @@
             android:summary="%s"
             android:title="File name format" />
         <ListPreference
-            android:defaultValue="0"
+            android:defaultValue="2073600"
             android:entries="@array/video_size_array"
-            android:entryValues="@array/video_size_array"
+            android:entryValues="@array/video_size_array_value"
             android:key="video_size"
             android:negativeButtonText="@null"
             android:positiveButtonText="@null"
-            android:summary=""
+            android:summary="%s"
             android:title="Resolution" />
         <ListPreference
-            android:defaultValue="0"
+            android:defaultValue="15"
             android:entries="@array/video_bit_rate_array"
-            android:entryValues="@array/video_frame_rate_array"
+            android:entryValues="@array/video_bit_rate_array_value"
             android:key="bit_rate"
             android:negativeButtonText="@null"
             android:positiveButtonText="@null"
-            android:summary="Select quality of recording.Higher quality means larger video file sizes"
-            android:title="Bitrate" />
+            android:summary="%s"
+            android:title="Bitrate : Select quality of recording.Higher quality means larger video file sizes" />
         <ListPreference
-            android:defaultValue="0"
+            android:defaultValue="16"
             android:entries="@array/video_frame_rate_array"
-            android:entryValues="@array/video_frame_rate_array"
+            android:entryValues="@array/video_frame_rate_array_value"
             android:key="frame_rate"
             android:negativeButtonText="@null"
             android:positiveButtonText="@null"
-            android:summary="Higher rate means more cup usage"
-            android:title="Frame rate" />
+            android:summary="%s"
+            android:title="Frame rate : Higher rate means more cpu usage" />
 
         <ListPreference
-            android:defaultValue="0"
+            android:defaultValue="2"
             android:entries="@array/video_encoder_array"
-            android:entryValues="@array/video_encoder_array"
+            android:entryValues="@array/video_encoder_array_value"
             android:key="video_encoder"
             android:negativeButtonText="@null"
             android:positiveButtonText="@null"
